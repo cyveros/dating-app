@@ -10,6 +10,8 @@ export function getRandUser() {
 
     let result = await response.json();
 
+    await sleep(1200);
+
     dispatch({
       type: 'RAND_USER',
       user: result.results[0]
@@ -26,4 +28,10 @@ export function confirm() {
   return {
     type: 'INCRE_COUNT'
   }
+}
+
+function sleep(delay: number) {
+  return new Promise(
+    (resolve: Function) => setTimeout(resolve, delay)
+  );
 }

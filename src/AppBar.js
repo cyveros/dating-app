@@ -12,7 +12,7 @@ class AppBar extends Component {
     return (
       <header className="app-header">
         <p>Gender Neutral Dating App</p>
-        <p className={'counter'}>{count}</p>
+        <p className={count >= 5 ? 'counter-orange' : 'counter'}>{count}</p>
       </header>
     );
   }

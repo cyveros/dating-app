@@ -13,8 +13,11 @@ class AppBody extends Component {
 
     return (
       <div className={'app-body'}>
-        {user && <img src={user.picture.large}/>}
-        {(loading || !user) ? <p>Loading ...</p> : <p>{user.name.first} {user.name.last}</p>} 
+        {user && !loading ? <div className={'avatar-container'}>
+          <img className={'avatar'} src={user.picture.large}/>
+          <p><span>{user.name.first}</span> <span>{user.name.last}</span></p>
+          <p className={'age'}>{user.dob.age}</p>
+        </div> : <p>Loading ...</p>} 
       </div>
     );
   }

@@ -5,6 +5,14 @@ import './App.css';
 import {getRandUser, confirm} from './Actions';
 
 class AppControl extends Component {
+  componentDidMount() {
+    const {user = null, loading = false, getRandUser} = this.props;
+
+    if (!user) {
+      getRandUser();
+    }
+  }
+
   render() {
     const {
       count = 0,
@@ -15,12 +23,16 @@ class AppControl extends Component {
 
     return (
       <footer className="app-footer">
-        <a className={'no'} onClick={() => {
-          getRandUser();
+        <a className={'no' + (loading ? ' disabled': '')} onClick={() => {
+          if (!loading) {
+            getRandUser();
+          }
         }}>No</a>
-        <a className={'yes'} onClick={() => {
-          confirm();
-          getRandUser();
+        <a className={'yes' + (loading ? ' disabled': '')} onClick={() => {
+          if (!loading) {
+            confirm();
+            getRandUser();
+          }
         }}>Yes</a>
       </footer>
     );

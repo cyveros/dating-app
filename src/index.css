@@ -13,12 +13,22 @@ code {
     monospace;
 }
 
-.app-header {height:60px;background-color:#424242;padding:16px;text-align:left;}
-.app-header p {display:inline-block;color:white;}
-.app-header p.counter {background: #fff;color:black;float:right;padding:8px;border-radius:5px;}
+#root {display:block;width:500px;height:500px;}
 
+.app-header {height:60px;background-color:#424242;padding:12px 16px;text-align:left;}
+.app-header p {display:inline-block;color:white;font-size:18px;font-style:bold;}
+.app-header p.counter, .app-header p.counter-orange {background: #fff;color:black;padding:2px 7px;border-radius:6px;float:right;}
+.app-header p.counter-orange {background-color: #FF6F00;}
 
-.app-footer {position:fixed;bottom:0;left:0;padding:31px 12px;height:60px;}
-.yes,.no {width:249px;color:white;display:inline-block;font-size:18px;}
+.app-body {height:380px;display:flex;flex-direction:column;justify-content:center;align-content:space-between;}
+.avatar {border-radius:64px;display:block;align-self: center;justify-items:center;align-items:center;}
+.avatar-container {display:flex;flex-direction:column;align-self:center;}
+.app-body p {font-size:32px;text-transform: capitalize;margin-top:8px;}
+.app-body p.age {font-size:14px;margin-top:-28px;padding:0;}
+
+.app-footer {width:100%;padding:31px 0px;height:60px;}
+.yes,.no {width:50%;color:white;display:inline-block;font-size:18px;padding: 21px 0px;cursor: pointer;}
 .yes {background-color: #FF6F00;}
 .no {background-color: black}
+.disabled {background-color:#757575;}
+
